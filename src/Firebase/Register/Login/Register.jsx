@@ -2,24 +2,34 @@ import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../AuthContext/AuthContext';
 import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
-    const {createUser} = use(AuthContext)
+    const {createUser} = use(AuthContext);
+
 
     const handleRegister = (e)=>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const name = e.target.name.value;
+
+        const profile = {
+            displayName: name
+        }
+
        createUser(email, password).then(result => {
         console.log(result.user);
         toast.success("Account created successfull")
+        updateProfile(result.user,profile)
        }).catch(err =>{
         console.log(err);
         toast.error("Something went wrong");
        })
         
     }
+
 
     return (
         
@@ -29,7 +39,7 @@ const Register = () => {
       <div className="card-body">
         <form onSubmit={handleRegister}>
             <fieldset className="fieldset">
-          <label className="label">Email</label>
+          <label className="label">Name</label>
           <input 
           name='name'
           type="text" 
