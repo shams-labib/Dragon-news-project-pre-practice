@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import Navber from '../components/Navber';
 import { Outlet } from 'react-router';
 import Footer from '../components/Footer';
@@ -7,8 +7,20 @@ import Ticket from '../components/Header/Ticket';
 import Rightside from '../components/Twosidehandler/Rightside';
 import LeftSideBtn from '../components/Twosidehandler/LeftSideBtn';
 import { ToastContainer } from 'react-toastify';
+import { AuthContext } from '../Firebase/AuthContext/AuthContext';
 
 const Root = () => {
+
+  const {loading} = use(AuthContext);
+    if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-spinner text-accent"></span>
+      </div>
+    );
+  }
+
+
     return (
         <div className=' '>
                 <Header></Header>
