@@ -7,6 +7,7 @@ import Career from "../Pages/Career";
 import Card from "../components/Twosidehandler/Card";
 import Register from "../Firebase/Register/Login/Register";
 import Login from "../Firebase/Register/Login/Login";
+import PrivateRoutes from "../Firebase/PrivateRoutes/PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -17,11 +18,19 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 index: true,
-                element:<Home></Home>,
+                element:<Home></Home>
             },
             {
                 path:'/about',
-                element:<About></About>
+                element:<PrivateRoutes>
+                    <About></About>
+                </PrivateRoutes>
+            },
+            {
+                path:'/career',
+                element:<PrivateRoutes>
+                    <Career></Career>
+                </PrivateRoutes>
             },
             {
               path:'/register',
@@ -30,10 +39,6 @@ export const router = createBrowserRouter([
             {
               path:'/login',
               element:<Login></Login>
-            },
-            {
-                path:'/career',
-                element:<Career></Career>
             },
             {
                 path:'/category/:id',

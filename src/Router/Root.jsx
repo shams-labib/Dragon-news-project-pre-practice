@@ -19,13 +19,13 @@ const Root = () => {
                 <Navber></Navber>
             </div>
              <main className="container mx-auto min-h-screen my-3 flex justify-between  gap-5">
-        <aside className="w-[25%] border-1 border-red-500">
+        <aside className="w-[25%] ">
         <LeftSideBtn></LeftSideBtn>
         </aside>
-        <section className="w-[50%] border-1 border-red-500">
+        <section className="w-[50%]">
           <Outlet></Outlet>
         </section>
-        <aside className="w-[25%] border-1 border-red-500">
+        <aside className="w-[25%]">
           <Rightside></Rightside>
         </aside>
       </main>

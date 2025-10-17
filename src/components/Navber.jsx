@@ -35,7 +35,7 @@ const Navber = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-blue-600 font-semibold" : "text-gray-700 hover:text-blue-500"
+            isActive ? "text-blue-600 font-semibold underline" : "text-gray-700 hover:text-blue-500"
           }
         >
           Home
@@ -43,7 +43,7 @@ const Navber = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-blue-600 font-semibold" : "text-gray-700 hover:text-blue-500"
+            isActive ? "text-blue-600 font-semibold underline" : "text-gray-700 hover:text-blue-500"
           }
         >
           About
@@ -51,7 +51,7 @@ const Navber = () => {
         <NavLink
           to="/career"
           className={({ isActive }) =>
-            isActive ? "text-blue-600 font-semibold" : "text-gray-700 hover:text-blue-500"
+            isActive ? "text-blue-600 font-semibold underline" : "text-gray-700 hover:text-blue-500"
           }
         >
           Career
